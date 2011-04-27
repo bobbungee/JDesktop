@@ -1,0 +1,8 @@
+Main-Class: com.jdesktop.CreateHTML
+
+Name: com/jdesktop
+Sealed: true
+Specification-Title: "JDesktop"
+Specification-Vendor: "com.jdesktop"
+Implementation-Title: "JDesktop"
+Implementation-Vendor: "com.jdesktop"
