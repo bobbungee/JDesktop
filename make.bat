@@ -1,7 +1,7 @@
 @echo off
 
-SET cc="C:\Documents and Settings\s504490\My Documents\Classes\Computer Science\Java\jdk\bin\javac.exe"
-SET jar="C:\Documents and Settings\s504490\My Documents\Classes\Computer Science\Java\jdk\bin\jar.exe"
+SET cc=javac
+SET jar=jar
 
 SET out=bin
 SET res=resources
@@ -38,6 +38,7 @@ goto :eof
 
 :Copy
 copy "%res%\*.bat" "%dir%\%dist%"
+copy "desktop.ini" "%dir%\%dist%"
 goto :eof
 
 :Clean
