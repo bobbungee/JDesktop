@@ -22,8 +22,8 @@ import java.util.*;
 
 public class Generate {
 	
-	public static final List<String> OPERATIONS = Arrays.asList(new String[] {"background", "color", "flash", "applet"});
-	public static final int[] PLACES			= {HTML.HEAD, HTML.HEAD, HTML.BODY, HTML.BODY};
+	public static final List<String> OPERATIONS = Arrays.asList(new String[] {"background", "color", "flash", "applet", "website"});
+	public static final int[] PLACES			= {HTML.HEAD, HTML.HEAD, HTML.BODY, HTML.BODY, HTML.BODY};
 	
 	public static List<String> generate(int operation, String value) {
 		
@@ -35,6 +35,8 @@ public class Generate {
 			return flash(value);
 		else if (Generate.OPERATIONS.indexOf("applet") == operation)
 			return applet(value);
+		else if (Generate.OPERATIONS.indexOf("website") == operation)
+			return website(value);
 		
 		return null;
 	}
@@ -82,6 +84,15 @@ public class Generate {
 			html.add(" code=\""+value.substring(value.lastIndexOf(File.separator)+1)+"\">");
 			
 		html.add("</applet>");
+		
+		return html;
+	}
+	
+	private static List<String> website(String value) {
+		List<String> html = new ArrayList<String>();
+		
+		html.add("<iframe src=\""+value+"\" width=\""+Desktop.WIDTH+"\" height=\""+Desktop.HEIGHT+"\">");
+		html.add("</iframe>");
 		
 		return html;
 	}
